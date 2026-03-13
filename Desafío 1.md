@@ -126,3 +126,14 @@ FinAlgoritmo
 
 ```
 </div>
+
+## Esquema de Tareas - Cronograma
+En vista de que la fecha máxima de entrega es el 20 de Marzo, entonces el trabajo se realizará de la siguiente forma:
+
+- **14/03/26 - Sábado:** Realizar funciones relacionadas al diseño del panel de control. `Filas()`, `Ancho` y `Matriz`.
+- **15/03/26 - Domingo:** Día libre.
+- **16/03/26 - Lunes:** Funciones relacionadas con las piezas del Tetris. `Linea()` , `Cuadrado()`, `Te()`, `Ese()`, `Zeta()`, `Jota()`, `Ele()`.
+- **17/03/26 - Martes:** Implementar las funciones relacionadas con el movimiento de las piezas `izquierda()`, `derecha()`, `abajo` y `colision()`.
+- **18/03/26 - Miércoles:** Por ultimo, las funciones de eliminación de filas y fin del juego. `eliminar_fila()` y `game_over()`.
+- **10/03/26 - Jueves:** Grabación del vídeo
+- **2'/03/26 - Viernes:** Documentación
