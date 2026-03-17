@@ -78,8 +78,11 @@ int main(){
 }
 ```
 Siendo que la salida es:
+
 ![alt text](<../Material/Pasted image 20260316135626.png>)
+
 Mientras que si comentamos la linea `pointer = 10;` entonces el valor será el `20` anteriormente declarado. Tal como se puede observar: 
+
 ![alt text](<../Material/Pasted image 20260316135800.png>)
 
 ## Arreglos
@@ -93,6 +96,7 @@ Un arreglo es una variable a la que se le puede almacenar varios datos del mismo
 
 | Precios | 1700 | 850 | 2300 | 300 | 1000 | ... | 1800 |
 | ------- | ---- | --- | ---- | --- | ---- | --- | ---- |
+
 Solo que al definir un arreglo se debe de especificar la cantidad de espacios de memoria a resguardar, teniendo en cuenta que al igual que en `Python` se empieza desde `0`. Algo como`int Temp[30];` donde estoy creando un arreglo y le estoy diciendo que me guarde `30` espacios de memoria.
 ```cpp
 #include <iostream>
@@ -108,7 +112,9 @@ int main(){
 }
 ```
 Donde su salida evidentemente sería:
+
 ![alt text](<../Material/Pasted image 20260316175039.png>)
+
 Mientras que si accedemos a la posición 4, tal que
 ```cpp
 #include <iostream>
@@ -123,7 +129,9 @@ int main(){
 }
 ```
 La salida será:
+
 ![alt text](<../Material/Pasted image 20260316175143.png>)
+
 Mientras que para imprimir todo lo que contiene el arreglo, la forma correcta de hacerlo sería:
 ```cpp
 #include <iostream>
@@ -141,7 +149,9 @@ int main(){
 }
 ```
 Donde se ejecuta únicamente el bucle `for` la salida sería:
+
 ![alt text](<../Material/Pasted image 20260316175015.png>)
+
 ### Arreglos multidimensionales
 Para crear una matriz se usan los arreglos  multidimensionales, que consisten en declararlo separando por una coma. Tal que:
 
