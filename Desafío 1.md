@@ -45,7 +45,8 @@ Teniendo en cuenta que las indicaciones para el desarrollo del desafío son:
 - **Validación:** Debe ser múltiplo de 8
 - **Lógica basada en operaciones a nivel de `Bits`:**  Definir estructuras que permitan representar los elementos requeridos en la visualización.
 - **Piezas:** Para el tetris, las piezas a representar serán | (1x4) , Cuadrado (2x2), T (3x2), S (3x2), Z (3x2), J (2x3), L (2x3)
-![[aaa.png]]
+
+![alt text](Material/aaa.png)
 
 </div>
 
@@ -77,7 +78,9 @@ Teniendo en cuenta los requisitos anteriores, consideramos que los pasos que deb
 ## 3. Algoritmo
 
 Para entender mejor el desarrollo del desafío hemos dispuesto de `Pseint`para analizar y desarrollar el algoritmo base a seguir durante el desarrollo. El algoritmo es:
-![[Diagrama de flujo pseint.png]]
+
+![alt text](<Material/Diagrama de flujo pseint.png>)
+
 Donde el código de `Pseint`es:
 ```pascal
 Algoritmo TetrisBits
