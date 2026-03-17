@@ -13,6 +13,6 @@ A pesar de que son dos lenguajes de programación ambos son lenguajes de alto ni
 Se vera el paradigma de programación orientada a objetos, que es un paradigma de programación que se utiliza para crear software, videojuegos, sistemas operativos que permite crear objetos con sus propiedades y metodos. Un paradigma que es bastante utilizado en la industria de la programación y mucho más en C++-
 
 **Porcentaje de evaluaciones**  
-![[Pasted image 20260316123306.png]]
+![alt text](<../Material/Pasted image 20260316123306.png>)
 
 </div>

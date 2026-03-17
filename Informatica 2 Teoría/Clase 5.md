@@ -78,9 +78,9 @@ int main(){
 }
 ```
 Siendo que la salida es:
-![[Pasted image 20260316135626.png]]
+![alt text](<../Material/Pasted image 20260316135626.png>)
 Mientras que si comentamos la linea `pointer = 10;` entonces el valor será el `20` anteriormente declarado. Tal como se puede observar: 
-![[Pasted image 20260316135800.png]]
+![alt text](<../Material/Pasted image 20260316135800.png>)
 
 ## Arreglos
 Un arreglo es una variable a la que se le puede almacenar varios datos del mismo tipo. Con un ejemplo cotidiano sería algo como
@@ -108,7 +108,7 @@ int main(){
 }
 ```
 Donde su salida evidentemente sería:
-![[Pasted image 20260316175039.png]]
+![alt text](<../Material/Pasted image 20260316175039.png>)
 Mientras que si accedemos a la posición 4, tal que
 ```cpp
 #include <iostream>
@@ -123,7 +123,7 @@ int main(){
 }
 ```
 La salida será:
-![[Pasted image 20260316175143.png]]
+![alt text](<../Material/Pasted image 20260316175143.png>)
 Mientras que para imprimir todo lo que contiene el arreglo, la forma correcta de hacerlo sería:
 ```cpp
 #include <iostream>
@@ -141,7 +141,7 @@ int main(){
 }
 ```
 Donde se ejecuta únicamente el bucle `for` la salida sería:
-![[Pasted image 20260316174618.png]]
+![alt text](<../Material/Pasted image 20260316175015.png>)
 ### Arreglos multidimensionales
 Para crear una matriz se usan los arreglos  multidimensionales, que consisten en declararlo separando por una coma. Tal que:
 
