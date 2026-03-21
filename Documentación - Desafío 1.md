@@ -260,3 +260,222 @@ void nueva_pieza(int indice) {
   pieza_fila = 0;              // EMpieza arriba
 }
 ``` 
+
+***`movimiento.cpp/h`*** gestiona el movimiento de las piezas de acuerdo a su posición en sus ejes `x`,`y` 
+- **`moverIzquierda()` / `moverDerecha()` / `moverAbajo()`** Gestiona los cambios en `pieza_col` y `pieza_fila`. Cada movimiento depende de `hay_colision()`: si hay un choque, la posición se fija con `fijar_pieza()`.
+```cpp
+// Mueve la pieza una columna a la izquierda (tecla A)
+unsigned short moverIzquierda(unsigned short pieza) {
+  if (!hay_colision(pieza, pieza_col - 1, pieza_fila))
+    pieza_col--;
+  return pieza;
+}
+
+// Mueve la pieza una columna a la derecha (tecla D)
+unsigned short moverDerecha(unsigned short pieza) {
+  if (!hay_colision(pieza, pieza_col + 1, pieza_fila))
+    pieza_col++;
+  return pieza;
+}
+
+// Mueve la pieza una fila hacia abajo (tecla S)
+unsigned short moverAbajo(unsigned short pieza) {
+  if (!hay_colision(pieza, pieza_col, pieza_fila + 1))
+    pieza_fila++;
+  return pieza;
+}
+
+```
+
+***`fin_juego.cpp/h`*** Su propósito es eliminar las filas completas del tablero y verificar el fin de la partida. Esto ocurre si se detecta una colisión en el punto de aparición justo al cargar una nueva pieza.
+
+- `juego_terminado()` si el sistema reporta que la pieza tuvo una colisión en la posición inicial (`pieza_fila = 0`), define que el juego a terminado con `true`.
+```cpp
+// El juego termina cuando la nueva pieza que acaba de aparecer ya colisiona en
+// su posicion inicial
+bool juego_terminado() {
+  return hay_colision(pieza_actual, pieza_col, pieza_fila);
+}
+```
+
+- `eliminar_filas_llenas.cpp/h` escanea todo el tablero para identificar filas totalmente ocupadas. Cuando detecta una, desplaza todas las filas superiores para sobrescribir la fila llena, repitiendo el proceso hasta el tope del tablero para "bajar" todas las piezas.
+```cpp
+void eliminar_filas_llenas() {
+  // Recorrer el tablero de abajo hacia arriba
+  for (int fila = alto - 1; fila >= 0; fila--) {
+
+    bool fila_llena = true;
+    for (int columna = 0; columna < ancho; columna++) {
+      if (!tablero[fila][columna]) { // si hay una celda libre, la fila no esta llena
+        fila_llena = false;
+        break;
+      }
+    }
+
+    if (fila_llena) {
+      for (int fila_desplazada = fila; fila_desplazada > 0; fila_desplazada--) {
+        for (int columna = 0; columna < ancho; columna++) {
+          tablero[fila_desplazada][columna] = tablero[fila_desplazada - 1][columna]; // copiar la fila de arriba
+        }
+      }
+      // La fila 0 queda completamente vacia
+      for (int columna = 0; columna < ancho; columna++) {
+        tablero[0][columna] = false;
+      }
+      // Volver a revisar la misma fila 'fila' porque ahora tiene el contenido de
+      // la de arriba
+      fila++;
+    }
+  }
+}
+```
+
+***`main.cpp`*** en el principal hemos puesto en la secuencia correcta todas las funciones para que el juego pudiera funcionar como lo teníamos previsto.
+```cpp
+int main() {
+
+  validar_dimensiones();
+
+  int indice = 0;
+  nueva_pieza(indice); // Nueva pieza
+
+  cout << "\nControles: A = izquierda  D = derecha  S = bajar  Q = salir\n\n";
+  imprimir_tablero();
+
+  char tecla;
+  while (true) {
+    cout << "Tecla: ";
+    cin >> tecla;
+
+    int fila_antes = pieza_fila; // guardar posicion antes de mover
+
+    switch (tecla) {
+    case 'a':
+    case 'A':
+      moverIzquierda(pieza_actual);
+      break;
+    case 'd':
+    case 'D':
+      moverDerecha(pieza_actual);
+      break;
+    case 's':
+    case 'S':
+      moverAbajo(pieza_actual);
+      if (pieza_fila == fila_antes) {
+        fijar_pieza();
+        eliminar_filas_llenas(); // eliminar filas completas antes de la
+        indice++; // siguiente pieza
+        nueva_pieza(indice);
+        cout << "[Nueva pieza!]\n";
+        if (juego_terminado()) {
+          destruir_tablero();
+          cout << "\n=== FIN DEL JUEGO ===\n"; // Si termino
+          return 0;
+        }
+      }
+      break;
+    case 'q':
+    case 'Q':
+      cout << "Saliendo...\n";
+      destruir_tablero();
+      return 0;
+    default:
+      cout << "Tecla no reconocida.\n";
+      continue;
+    }
+
+    imprimir_tablero();
+  }
+
+  destruir_tablero();
+  return 0;
+}
+```
+---
+## 3. Pruebas de ejecución
+
+### 3.1 Pruebas de generación inicial del tablero
+Luego de ejecutar el programa, la salida en consola es:
+![[1.png]]
+Después de solicitar las dimensiones del tablero y verificar que efectivamente sean múltiplos de 8, entonces, imprime el tablero y carga la primera pieza. Para comprobar que efectivamente verifique los números ingresados sean múltiplos de 8, realizamos la siguientes prueba:
+
+**Prueba 1:**
+![[2.png]]
+
+**Prueba 2:**
+![[3.png]]
+**Prueba 3:**
+Mientras que, si ingresamos los múltiplos de 8
+![[4.png]]
+Efectivamente, imprime e tablero sin errores.
+
+---
+### 3.2 Pruebas de movimiento
+Para verificar que las piezas efectivamente se muevan en el orden planeado y detecten las colisiones, entonces
+
+***Movimiento:***
+**Prueba 1:**
+![[5.png]]
+luego de presionar `s` se movió un espacio hacia abajo y, al mismo tiempo, tras presionar `S` se movió de la misma manera
+![[6.png]]
+
+**Prueba 2:**
+![[7.png]]
+De la misma forma, al presionar `a` y `A` la pieza se mueve hacia la derecha
+
+**Prueba 3:**
+![[8.png]]
+Por último, al presionar `d` y `D` se mueve hacia la derecha.
+
+***Colisión:***
+**Prueba 1:**
+![[9.png]]
+Tras una pieza chocar con otra, se queda en el lugar donde choco y inmediatamente, aparece la pieza siguiente que al momento de chocar, también se fija en el lugar del impacto.
+
+---
+### 3.3 Eliminación de filas y juego terminado
+**Prueba de eliminación de fila:**
+![[10.png]]
+Observando que al llenarse la ultima fila, se elimino y paso la fila superior a sobrescribir la fila que se lleno.
+
+**Prueba fin del juego:**
+![[11.png]]
+Una vez la nueva pieza cocho al crearse en la posición de inicio entonces el juego se dio por terminado.
+
+## 4. Que hicimos y que no hicimos
+
+| Característica                  | ¿Se cumplió? | Explicación sencilla                                                                                      |
+| ------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------- |
+| **Tablero ajustable**           | **Sí**       | Pedimos el ancho y alto (múltiplos de 8) y usamos `new` para crear el espacio en memoria.                 |
+| **Figuras**                     | **Sí**       | Creamos las 7 formas en hexadecimal (`0x0F00`)                                                            |
+| **Tipo de tablero (`#` y `.`)** | **Sí**       | Se dibuja el tablero usando `#` para lo lleno y `.` para los espacios vacíos.                             |
+| **Fin del juego**               | **Sí**       | El juego detecta cuando ya no hay espacio arriba al soltar una pieza nueva.                               |
+| **Colisiones**                  | **Sí**       | Las figuras reconocen paredes y el suelo.                                                                 |
+| **Piezas al azar**              | **No**       | Las piezas salen en orden (una tras otra) en lugar de ser aleatorias porque no supimos como hacerlo       |
+| **Mover con Bits**              | **No**       | En lugar de `<<` o `>>`, usamos sumas y restas simples (`col++` y `col--`) porque se nos hacia más fácil. |
+| **Fijar con OR (`\|`)**         | **No**       | En lugar de bits, guardamos la pieza celda por celda como `true` o `false`.                               |
+## 5. Conclusiones
+- **La organización del código importa mucho:** Durante el desafío se presento la importancia de estructurar correctamente un proyecto en `C++` para no enredarnos con un montón de código revuelto entre si. Para evitar el caos entonces tuvimos que utilizar archivos `.h` y la palabra reservada de `extern` para hacer un uso más eficiente de las variables (como el tablero o las coordenadas de la pieza) entre los archivos sin que el compilador se vuelva loco creando copias variables extra habiendo ya variables que podían ser utilizadas.
+
+- **Memoria dinámica:** No siempre podemos darle un tamaño fijo a las variables desde el principio, porque aveces, el tamaño que definimos no es suficiente y empiezan a haber errores. Usar el `new` y un doble puntero (`**`) para el tablero fue la única forma de lograr que el jugador pudiera elegir el ancho y el alto justo al empezar a jugar y a la vez, cumplir con los requisitos del desafío de utilizar memoria dinámica y punteros.
+
+- **Nombres que se entiendan:** Nos dimos cuenta de que poner letras sueltas como `f` o `c` hace que uno no se pierda en el código después de dejarlo unos meros días. Cambiarlas por palabras completas como `fila` y `columna` nos salvó la vida y nos ayudó a no olvidar nuestro código después de unos días.
+
+### 6. Desafíos encontrados
+
+- **El enredo de los archivos y los errores raros:** Peleamos un montón con el compilador. Me salían errores de que la variable "no existía" o "estaba duplicada". Fue un reto mental entender que el compilador lee archivo por archivo, y que si no usaba correctamente el `extern` y los `#include`, los archivos no se comunicaban bien entre ellos.
+
+- **Operaciones de bits:** Tratar de entender cómo extraer la forma de las piezas usando `<<` y comparando con el AND (`&`) fue un dolor de cabeza enorme. Nos confundíamos un montón al pensar en ceros y unos, y no entendía por qué no podía usar un simple `OR` o `XOR`. Fue tan duro que, para la lógica principal del tablero, preferí cambiar las operaciones de bits por variables normales (como una matriz de booleanos de verdadero/falso), porque intentar hacer todo el juego a nivel de bits era demasiado complicado y abstracto para nuestro nivel actual y con el objetivo de completar exitosamente las fechas de entrega entonces decidimos realizar ese cambio. Pero lógicamente incluyendo operaciones a nivel de bits, porque el desafío lo pedía si o si.
+
+## 7. Referencias
+***Videos:***
+- https://youtu.be/bgfH_HB341M?si=Qy7LwwYeRB2vdRw1
+- https://youtu.be/NBO3UXdccIs?si=OjTDSCE6vrV6ASkm
+- https://youtu.be/kMGNd7G_b4A?si=onVFEhqRe6FyVBwO
+- https://youtu.be/PGHvRp7RSmQ?si=rkVczK7mk44BCh6P
+- https://youtu.be/5rS0hkOOIfI?si=VlliqFIYOqPlB_Mz
+- https://youtu.be/wYboaB70-Zw?si=oIzanBkHORPVJgcp
+- https://youtu.be/2PIZ0G0Hml4?si=nfOg-awGFTHBCWRA
+
+**Foros:**
+- https://www.reddit.com/r/technicalwriting/comments/113mh5p/technical_documentation_templatessamplesexamples/?tl=es Luego de bajar se encuentra el comentario de "[Pradeepa_Soma](https://www.reddit.com/user/Pradeepa_Soma/)"
