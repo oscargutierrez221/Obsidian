@@ -12,12 +12,15 @@ Tal como se establece en el documento del desafío 1:
 > “El objetivo principal de esta actividad es poner a prueba sus habilidades en el análisis de problemas y en el dominio del lenguaje C++. Si ha seguido un proceso disciplinado de aprendizaje a lo largo del semestre, esta es una excelente oportunidad para demostrarlo. Podrá proponer una solución efectiva y obtener un resultado satisfactorio"
 
 De esta manera, el desafío busca evaluar de forma práctica el dominio de técnicas avanzadas de programación en `C++`, con énfasis en el uso eficiente de operadores a nivel de bits y la gestión de memoria dinámica.
+
+---
 ### 1.2 Consideraciones del desarrollo
 Teniendo en cuenta que las indicaciones para el desarrollo del desafío son:
 - **Dimensiones:** El ancho y alto mínimo deben ser de 8 bloques
 - **Validación:** Debe ser múltiplo de 8
 - **Lógica basada en operaciones a nivel de `Bits`:**  Definir estructuras que permitan representar los elementos requeridos en la visualización.
 - **Piezas:** Para el tetris, las piezas a representar serán | (1x4) , Cuadrado (2x2), T (3x2), S (3x2), Z (3x2), J (2x3), L (2x3)
+---
 ### 1.3. Restricciones del desarrollo
 Lo que se debía tener en cuenta para el desarrollo del desafío 1 según la guía propuesta era:
 1. No se pueden usar objetos tipo `string`como parte de la solución.
@@ -27,7 +30,7 @@ Lo que se debía tener en cuenta para el desarrollo del desafío 1 según la gu�
 5. **Uso de operadores a nivel de bits:** Desplazamientos, colisiones, rotaciones, fijación de piezas, eliminación de filas y detección de `Game Over` 
 6. Gestión eficiente de la memoria
 7. **Lógica del juego:** Que funcione como el clásico juego de Tetris
-
+---
 ## 2. Desarrollo
 ### 2.1 Arquitectura
 Existen 8 archivos excluyendo el archivo principal `main.cpp`  donde cada uno de estos archivos tiene un rol muy especifico. Dichos archivos, están divididos en el `Headers` y `Sources` de la siguiente forma: `panel_control cpp/h`, `piezas cpp/h`, `movimiento cpp/h` y `fin_juego cpp/h`. 
@@ -119,7 +122,7 @@ Función Piezas_ReclamarInstancia
 	Escribir '[piezas.cpp] -> Reclamando nueva instancia de la pieza...'
 FinFunción
 ```
-
+---
 ### 2.2 Descripción archivos
 
 ***`panel_control.cpp/h`*** 
