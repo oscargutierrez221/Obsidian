@@ -11,10 +11,14 @@
             "id": "8ab760ca3b3eba79",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Desafío 1.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Desafío 1"
             }
           }
         ]
@@ -179,10 +183,10 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "4f6ba094377e4601",
+  "active": "8ab760ca3b3eba79",
   "lastOpenFiles": [
-    "Documentación - Desafío 1.md",
     "Diagrama_de_flujo_documentacion.png",
+    "Documentación - Desafío 1.md",
     "1.png",
     "Desafío 1.md",
     "11.png",
