@@ -20,6 +20,7 @@
 - [9. Conceptos POO: Modularidad](#9-conceptos-poo-modularidad)
 - [10. Ejemplos](#10-ejemplos-de-poo)
     - [10.1 Diferentes formas de instanciar un metodo](#101-ejemplo-1)
+    - [10.2 Constructor y destructor](#102-constructor-y-destructor)
 
 ## 1. Tener en cuenta que
 
