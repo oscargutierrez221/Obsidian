@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5e4aec3da60b2c04",
+        "id": "562ae46434cbe9e3",
         "type": "tabs",
         "children": [
           {
-            "id": "8ab760ca3b3eba79",
+            "id": "33a3fadc81f8a597",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Desafío 1.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Desafío 1"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -183,25 +179,31 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "8ab760ca3b3eba79",
+  "active": "33a3fadc81f8a597",
   "lastOpenFiles": [
+    "sangre.md",
+    "PRIMER MOMENTO.md",
+    "Desafío 1.md",
+    "Guía_Arch.md",
     "Diagrama_de_flujo_documentacion.png",
     "Documentación - Desafío 1.md",
-    "1.png",
-    "Desafío 1.md",
-    "11.png",
-    "10.png",
-    "9.png",
-    "8.png",
-    "7.png",
-    "6.png",
-    "5.png",
-    "4.png",
+    "README.md",
+    "Material/9.png",
+    "Guía.md",
+    "Material/11.png",
+    "Material/10.png",
+    "Informatica 2 Teoría/guia.md",
+    "Informatica 2 Teoría/Clase 2.md",
+    "Informatica 2 Teoría/Clase 1.md",
+    "Material/1.png",
+    "Material/8.png",
+    "Material/7.png",
+    "Material/6.png",
+    "Material/5.png",
+    "Material/4.png",
     "Informatica 2 Teoría/Clase 5.md",
     "Informatica 2 Teoría/Clase 4.md",
     "Informatica 2 Teoría/Clase 3.md",
-    "Informatica 2 Teoría/Clase 2.md",
-    "Informatica 2 Teoría/Clase 1.md",
     "Material",
     "Clase 4.ipynb",
     "Informatica 2 Teoría"
