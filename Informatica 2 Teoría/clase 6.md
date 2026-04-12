@@ -1,6 +1,23 @@
 # Clase 6: Introducción a la Programación Orientada a Objetos (POO)
 
-## Tener en cuenta que
+## Indice
+
+- [1. Tener en cuenta que](#1-tener-en-cuenta-que)
+- [2. ¿Qué es la Programación Orientada a Objetos (POO)?](#2-qué-es-la-programación-orientada-a-objetos-poo)
+    - [2.1 Importante:](#21-importante)
+    - [2.2 Terminos a tener en cuenta:](#22-terminos-a-tener-en-cuenta)
+- [3. Ventajas de la POO](#3-ventajas-de-la-poo)
+- [4. Desventajaas de la POO](#4-desventajaas-de-la-poo)
+- [5. Objeto y Clase](#5-objeto-y-clase)
+    - [5.1 Ejemplo: Objeto y clases](#51-ejemplo-objeto-y-clases)
+- [6. Conceptos importantes de la POO](#6-conceptos-importantes-de-la-poo)
+    - [6.1 Conceptos básicos](#61-conceptos-básicos)
+    - [6.2 Características](#62-características)
+    - [6.3 Tipos de relaciones](#63-tipos-de-relaciones)
+    - [6.4 Representaciones graficas](#64-representaciones-graficas)
+- [7. Conceptos POO: Abstracción](#7-conceptos-poo-abstracción)
+
+## 1. Tener en cuenta que
 
 - Los programas suelen tener **varias soluciones posibles**
 - En programación existen **distintos paradigmas** que nos ayudan a enfrentar un problema
@@ -8,18 +25,18 @@
     - Algunos lenguajes soportan varias metodologías, como `Python`, `C++`, `Java`, etc.
     
 
-## ¿Qué es la Programación Orientada a Objetos (POO)?
+## 2. ¿Qué es la Programación Orientada a Objetos (POO)?
 
 La programación orientada a objetos es un paradigma de programación que se basa en el concepto de "objetos", los cuales pueden contener datos en forma de campos (a menudo conocidos como atributos o propiedades), y código, en forma de procedimientos (a menudo conocidos como métodos).
 
 En C++, la POO se implementa a través de clases y objetos.
 
-### Importante:
+### 2.1 Importante:
 
 - Usamos **Objetos en lugar de tareas** como  bloque fundamental de análisis.
 - Cada objeto es una **instancia** de una **Clase**, un elemento que pertenecee aa dicha categoria.
 
-### Terminos a tener en cuenta:
+### 2.2 Terminos a tener en cuenta:
 
 - **Clase**: Es un modelo o plantilla que define las características y comportamientos comunes de un grupo de objetos.
 - **Objeto**: Es una instancia específica de una clase, con sus propios datos y comportamientos.
@@ -29,7 +46,7 @@ En C++, la POO se implementa a través de clases y objetos.
 
 > Tener en cuenta que al **instanciar** una varible o una clase es lo mismo que decirle al sistema que te guarde un espacio en memoria para guardar los datos de esa variable o clase.
 
-## Ventajas de la POO
+## 3. Ventajas de la POO
 
 - Proximidad de los conceptos de la POO con los conceptos del **mundo real**.
 - Facilita la **reutilización** y el **mantenimiento** del código.
@@ -37,7 +54,7 @@ En C++, la POO se implementa a través de clases y objetos.
 - Disipa la barreras entre el **que hace** y el **como lo hace**.
 - Constribuye a darle mayor estructura (**arquitectura**) el software y mejora su seguridad.
 
-## Desventajaas de la POO
+## 4. Desventajaas de la POO
 
 - Mayor **complejiddad** a la hora de entender el flujo de datos
     - Pérdida de linealidad
@@ -45,7 +62,7 @@ En C++, la POO se implementa a través de clases y objetos.
     - **Unified Modeling Language (UML):** En este curso estudiaaremos una *versión simplificada* de UML.
     - **Representaaciones graficas**: y documentación más complejas.
 
-## Objeto y Clase
+## 5. Objeto y Clase
 
 un **objeto** es un ente abstracto que podemos describir y manipular; tiene características y un comportamientos específico.
 
@@ -67,7 +84,7 @@ Una **clase** describe los objetos del mismo tipo, los categoriza.
 
 Una **clase** permite al programador definir un tipo de datos propio, que puede contener tanto datos (atributos) como comportamiento (métodos).
 
-### Por ejemplo: Objeto y clases
+### 5.1 Ejemplo: Objeto y clases
 
 |Objeto: |=| Clase: |
 |---|---|---|
@@ -75,30 +92,30 @@ Una **clase** permite al programador definir un tipo de datos propio, que puede 
 | auto | | vehiculo |
 | perro | | animal |
 
-## Conceptos importantes de la POO
+## 6. Conceptos importantes de la POO
 
-### Conceptos básicos
+### 6.1 Conceptos básicos
 - Objeto
 - Clase
 
-### Características
+### 6.2 Características
 - Abstracción
 - Encapsulamiento
 - Modularidad
 - Jerarquía
 
-### Tipos de relaciones
+### 6.3 Tipos de relaciones
 - Asociación
 - Herencia
 - Agregación o Composición
 - Instanciación
 
-### Representaciones graficas
+### 6.4 Representaciones graficas
 
 - Digramas estéticos (de clses, de objetos...)
 - Digramas dinámicos (de secuencia, de colaboración...)
 
-## Conceptos POO: Abstracción
+## 7. Conceptos POO: Abstracción
 - Nos permite trabajr con la **complejidad del mundo real**.
     - Resaaltaqndo los aaspectos relevantes de los objetos que pertenecen a una clase, ocultando los detallles particulares de cada objeto.
 - Separemos el **comportamiento** de la **implementación**, diferenciando **que se hace** en lugar de **como se hace**.
