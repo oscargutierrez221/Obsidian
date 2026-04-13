@@ -48,6 +48,7 @@ Por ejemplo, un carro esta conformado por un motos, una bateria, cuatro llantas,
     - Nuevo tipo de encapsulamiento: `protected`
 
 ## 6. Componentes (Version de UML simplificado para el curso)
+
 ![Modelo UML a usar durante el curso](../Material/UML.png)
 
 > **NOTA:** No olvidar que para especificar el acceso:
@@ -60,11 +61,14 @@ Por ejemplo, un carro esta conformado por un motos, una bateria, cuatro llantas,
 > **NOTA:** Ten demasiado en cuenta el final de las lineas:
 
 **Por ejemplo:**
+
 ![ejemplo simple](../Material/Ejemplo_UML.png)
 
 Un ejemplo mas completo seria
+
 ![ejemplo mas completo](../Material/ejemplo2_UML.png)
 
 Y otro ejemplo mas para terminar de afianzar los conceptos
+
 ![ejemplo final](../Material/ejemplo3_UML.png)
 
