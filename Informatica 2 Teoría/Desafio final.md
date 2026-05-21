@@ -1,3 +1,5 @@
+<div style="text-align: justify;">
+
 # Paso a paso del Desarrollo del Proyecto: "Sangre de Dioses"
 ## Asignatura: Informática II
 **Desarrollador:** Oscar David Gutiérrez Hernández  
@@ -14,30 +16,53 @@
 
     - Luego de seleccionar `Qt Widgets Application`, entonces tendras que configurar el proyecto con las prefencias que gustes.
         - Nombre del proyecto y ruta del proyecto.
-        ![Nombre proyecto y ruta](../Material/nombre_proyecto.png)
+</div>
+
+![Nombre proyecto y ruta](../Material/nombre_proyecto.png)
+
+<div style="text-align: justify;">
 
         - Kit de compilacion.
-        ![Kit de compilacion](../Material/build_system.png)
+</div>
+
+![Kit de compilacion](../Material/build_system.png)
+
+<div style="text-align: justify;">
 
         - Class Information: Por defecto, trae una clase `MainWindow`, que contendra la logica del apartado visual del programa que estemos desarrollando. Cambialo si asi lo deseas.
-        ![Class information](../Material/class_information.png)
+</div>
+
+![Class information](../Material/class_information.png)
+
+<div style="text-align: justify;">
+
         - Finalmente, igual que antes podras configurar tanto el idioma, kit de copilacion que prefieras y control de versiones `git`.
-        ![Configure language](../Material/configure_lenguaj.png)
-        ![Kits copiler](../Material/kits_copiler.png)
+</div>
+
+![Configure language](../Material/configure_lenguaj.png)
+![Kits copiler](../Material/kits_copiler.png)
+
+<div style="text-align: justify;">
 
 > ⚠️ RECOMENDACION: En lo personal, me gusta mas trabajar con el `build system` `qmake`, ya que es mas sencillo de configurar y entender. Mucho mas que `Cmake`. 
 
 ## Que necesitas saber antes de empezar
 
 Una ve creado nuestro proyecto correctamente, podras encontrar muchas cosas extrañas y algunas otras no tanto.
+</div>
 
 ![Lo que primero vez](../Material/first_encontrado.png)
+
+<div style="text-align: justify;">
 
 Facilmente puedes observar que siguen conservandose los apartados modulares `headers` y `sources` que ya has trabajado con el `POO`. Pero hay algunas otras cosas que quizas te causen confucion, `MainWindow.h/cpp` y la carpeta `Forms` que contiene `mainwindow.ui`.
 
 Perfecto, pues vamos por partes...
+</div>
 
 ![mainwindow descripsion](../Material/mainwindow.png)
+
+<div style="text-align: justify;">
 
 1. `MainWindow.h`: Es la definicion de la clase configurada anteriormente en `Class Information`. Y como mencionamos anteriormente es nuestro gestor de ventanas...
 
@@ -108,7 +133,12 @@ para poder comprender lo que significan las clases `MainWindow` que incluso here
 > ⚠️ Nota: Pero bueno, verlo de esta forma quizas te sea mas complicado. No te preocupes, es algo que se genera automaticamente al crear el proyecto, no tienes que hacerlo todo tu mismo, pero es bueno saber que es lo que hace para entender de mejor manera el diseñador de interfaz de Qt.
 
 Continuando con los archivos que encontramos al abrir el proyecto entonces tenemos la carpeta `Forms` que contiene `mainwindow.ui` o dicho de otra forma, la ventana de condiguracion de interfaces de Qt `Qt-Designer`.
+</div>
 
 ![Qt-Designer](../Material/Qt-designer.png)
 
+<div style="text-align: justify;">
+
 Aunque puede parecer un poco feo y abrumador al principio, a medida que vamos avanzando veras que es realmente sencillo e intuitivo de usar.
+
+</div>
